@@ -1,36 +1,56 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["common/main"],{
 
 /***/ 0:
-/*!******************************************************!*\
-  !*** D:/class sign/wechat-app-travel/travel/main.js ***!
-  \******************************************************/
+/*!************************************************************!*\
+  !*** D:/class sign/wechat-app-travel/tes/uni_shop/main.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(wx, createApp) {
+/* WEBPACK VAR INJECTION */(function(wx, uni, createApp) {
 
 var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/defineProperty */ 11));
 __webpack_require__(/*! uni-pages */ 26);
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 25));
 var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ 27));
+var _requestMiniprogram = __webpack_require__(/*! @escook/request-miniprogram */ 33);
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2.default)(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 // @ts-ignore
 wx.__webpack_require_UNI_MP_PLUGIN__ = __webpack_require__;
+uni.$http = _requestMiniprogram.$http;
+_requestMiniprogram.$http.baseUrl = "https://api-hmugo-web.itheima.net";
+_requestMiniprogram.$http.beforeRequest = function (options) {
+  uni.showLoading({
+    title: "Loading..."
+  });
+};
+uni.$showMsg = function () {
+  var title = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'fail!';
+  var duration = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1500;
+  uni.showToast({
+    title: title,
+    duration: duration,
+    icon: 'none'
+  });
+};
+_requestMiniprogram.$http.afterRequest = function () {
+  uni.hideLoading();
+};
 _vue.default.config.productionTip = false;
 _App.default.mpType = 'app';
 var app = new _vue.default(_objectSpread({}, _App.default));
 createApp(app).$mount();
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/wx.js */ 1)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["createApp"]))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/wx.js */ 1)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["createApp"]))
 
 /***/ }),
 
 /***/ 27:
-/*!******************************************************!*\
-  !*** D:/class sign/wechat-app-travel/travel/App.vue ***!
-  \******************************************************/
+/*!************************************************************!*\
+  !*** D:/class sign/wechat-app-travel/tes/uni_shop/App.vue ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -68,9 +88,9 @@ component.options.__file = "App.vue"
 /***/ }),
 
 /***/ 28:
-/*!*******************************************************************************!*\
-  !*** D:/class sign/wechat-app-travel/travel/App.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************************/
+/*!*************************************************************************************!*\
+  !*** D:/class sign/wechat-app-travel/tes/uni_shop/App.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -84,9 +104,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 29:
-/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--13-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!D:/class sign/wechat-app-travel/travel/App.vue?vue&type=script&lang=js& ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--13-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!D:/class sign/wechat-app-travel/tes/uni_shop/App.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -114,9 +134,9 @@ exports.default = _default;
 /***/ }),
 
 /***/ 30:
-/*!****************************************************************************************!*\
-  !*** D:/class sign/wechat-app-travel/travel/App.vue?vue&type=style&index=0&lang=scss& ***!
-  \****************************************************************************************/
+/*!**********************************************************************************************!*\
+  !*** D:/class sign/wechat-app-travel/tes/uni_shop/App.vue?vue&type=style&index=0&lang=scss& ***!
+  \**********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -130,9 +150,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 31:
-/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--8-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--8-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-2!./node_modules/postcss-loader/src??ref--8-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/sass-loader/dist/cjs.js??ref--8-oneOf-1-4!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-5!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!D:/class sign/wechat-app-travel/travel/App.vue?vue&type=style&index=0&lang=scss& ***!
-  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--8-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--8-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-2!./node_modules/postcss-loader/src??ref--8-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/sass-loader/dist/cjs.js??ref--8-oneOf-1-4!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-5!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!D:/class sign/wechat-app-travel/tes/uni_shop/App.vue?vue&type=style&index=0&lang=scss& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
