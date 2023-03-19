@@ -1,0 +1,23 @@
+{
+  "name": "uni_shop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "@escook/request-miniprogram": "^0.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Amiter-zh/uni_shop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Amiter-zh/uni_shop/issues"
+  },
+  "homepage": "https://github.com/Amiter-zh/uni_shop#readme"
+}

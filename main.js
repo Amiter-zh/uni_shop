@@ -2,6 +2,30 @@
 // #ifndef VUE3
 import Vue from 'vue'
 import App from './App'
+//网络请求包
+import {$http} from "@escook/request-miniprogram"
+
+uni.$http = $http
+
+$http.baseUrl = `https://api-hmugo-web.itheima.net`
+
+$http.beforeRequest = function(options){
+	uni.showLoading({
+		title:"Loading..."
+	})
+}
+
+uni.$showMsg= function(title = 'fail!' , duration = 1500){
+	uni.showToast({
+		title,
+		duration,
+		icon:'none'
+	})
+}
+
+$http.afterRequest = function(){
+	uni.hideLoading()
+}
 
 Vue.config.productionTip = false
 
