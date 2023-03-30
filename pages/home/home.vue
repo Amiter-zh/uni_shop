@@ -1,5 +1,8 @@
 <template>
 	<view>
+		<view class="searchbox">
+			<my-search @click="gotoSearch"></my-search>
+		</view>
 		<!-- 轮播图区域 -->
 		<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" :circular="true">
 			<!-- 循环渲染轮播图的 item 项 -->
@@ -27,7 +30,8 @@
 							:style="{width: item.product_list[0].image_width + 'rpx'}" mode="widthFix"></image>
 					</navigator>
 					<view class="rbox">
-						<navigator class="rbitem" v-for="(item2,i2) in item.product_list" :key="i2" v-if="i2 != 0" :url="item2.url">
+						<navigator class="rbitem" v-for="(item2,i2) in item.product_list" :key="i2" v-if="i2 != 0"
+							:url="item2.url">
 							<image :src="item2.image_src" mode="widthFix" :style="{width: item2.image_width + 'rpx'}">
 							</image>
 						</navigator>
@@ -104,6 +108,11 @@
 				} else {
 
 				}
+			},
+			gotoSearch() {
+				uni.navigateTo({
+					url: '/subpkg/search/search'
+				})
 			}
 		},
 	}
@@ -146,5 +155,10 @@
 	.f-box {
 		display: flex;
 		padding-left: 10rpx;
+	}
+	.searchbox{
+		position: sticky;
+		top: 0px;
+		z-index: 999;
 	}
 </style>
