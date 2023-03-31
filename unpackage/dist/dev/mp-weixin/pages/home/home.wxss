@@ -32,4 +32,10 @@ swiper image {
   display: flex;
   padding-left: 10rpx;
 }
+.searchbox {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  z-index: 999;
+}
 
