@@ -1,0 +1,29 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.good_item {
+  display: flex;
+  padding: 10px 5px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.good_item .good_left {
+  margin: 5px;
+}
+.good_item .good_left .goods_pic {
+  width: 100px;
+  height: 100px;
+  display: block;
+}
+.good_item .good_right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.good_item .good_right .good_name {
+  font-size: 13px;
+}
+.good_item .good_right .good_price {
+  font-size: 16px;
+  color: #c00000;
+}
+
