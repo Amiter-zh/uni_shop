@@ -5,6 +5,8 @@ import App from './App'
 //网络请求包
 import {$http} from "@escook/request-miniprogram"
 
+import store from './store/store.js'
+
 uni.$http = $http
 
 $http.baseUrl = `https://api-hmugo-web.itheima.net`
@@ -32,7 +34,8 @@ Vue.config.productionTip = false
 App.mpType = 'app'
 
 const app = new Vue({
-    ...App
+    ...App,
+	store,
 })
 app.$mount()
 // #endif
