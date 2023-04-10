@@ -5,9 +5,14 @@
   display: flex;
   padding: 10px 5px;
   border-bottom: 1px solid #f0f0f0;
+  width: 750rpx;
+  box-sizing: border-box;
 }
 .good_item .good_left {
   margin: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .good_item .good_left .goods_pic {
   width: 100px;
@@ -25,5 +30,10 @@
 .good_item .good_right .good_price {
   font-size: 16px;
   color: #c00000;
+}
+.good_item .good_right .good_info_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 

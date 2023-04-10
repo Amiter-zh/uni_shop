@@ -148,12 +148,28 @@ exports.default = void 0;
 //
 //
 //
+//
+//
 var _default = {
   name: "my-goods",
   data: function data() {
     return {
       defaultsPic: 'https://img3.doubanio.com/f/movie/8dd0c794499fe925ae2ae89ee30cd225750457b4/pics/movie/celebrity-default-medium.png'
     };
+  },
+  methods: {
+    radioClickHandler: function radioClickHandler() {
+      this.$emit('radio-change', {
+        goods_id: this.goods.goods_id,
+        goods_state: !this.goods.goods_state
+      });
+    },
+    numberChangeHandler: function numberChangeHandler(val) {
+      this.$emit('num-change', {
+        goods_id: this.goods.goods_id,
+        goods_count: +val
+      });
+    }
   },
   filters: {
     tofixed: function tofixed(num) {
@@ -164,6 +180,14 @@ var _default = {
     goods: {
       type: Object,
       defaul: {}
+    },
+    showRadio: {
+      type: Boolean,
+      default: false
+    },
+    showNum: {
+      type: Boolean,
+      default: false
     }
   }
 };
